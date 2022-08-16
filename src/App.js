@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home/Home/Home";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,10 +14,26 @@ import MainSignUp from "./pages/Login/LoginCom/MainSignUp";
 import MainLogin from "./pages/Login/LoginCom/MainLogin";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import Header from "./pages/Home/Header/Header";
+import Footer from "./pages/Home/Footer/Footer";
+import BabySitterAuthentication from "./pages/Login/BabbySitterLogin/BabySitterAuthentication";
+import RequireAuth from "./components/RequireAuth/RequireAuth";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Welcome from "./components/Dashboard/Welcome/Welcome";
+import MyProfile from "./components/Dashboard/Profile/MyProfile";
+import BabySitterDetails from "./pages/BabySitterDetails/BabySitterDetails";
+import MyBookings from "./components/Dashboard/MyBooking/MyBookings";
+import Payment from "./components/Dashboard/payment/Payment";
+import BookedUserForBabySitter from "./components/Dashboard/BabySitterBooking/BookedUserForBabySitter";
+import Users from "./components/Dashboard/Users/Users";
+import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
+
 function App() {
   AOS.init();
+  const { pathname } = useLocation();
   return (
     <div>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/teacher" element={<MainTeacher />} />
@@ -30,8 +46,82 @@ function App() {
         <Route path="/teacher" element={<Teacher />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/login/babysitter"
+          element={<BabySitterAuthentication />}
+        />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/baby-sitter/:id" element={<BabySitterDetails />} />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route
+            index
+            element={
+              <RequireAuth>
+                <Welcome />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="my-profile"
+            element={
+              <RequireAuth>
+                <MyProfile />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="my-booking"
+            element={
+              <RequireAuth>
+                <MyBookings />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="babysitter-booking"
+            element={
+              <RequireAuth>
+                <BookedUserForBabySitter />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/dashboard/payment/:orderId"
+            element={
+              <RequireAuth>
+                <Payment />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/dashboard/users"
+            element={
+              <RequireAuth>
+                <Users />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/dashboard/manage-booking"
+            element={
+              <RequireAuth>
+                <ManageBooking />
+              </RequireAuth>
+            }
+          />
+        </Route>
       </Routes>
       <ToastContainer />
+      <div className={`${pathname.includes("/dashboard") && "hidden"} `}>
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@
             <p className="text-xl pt-1  text-center">Age:  3 - 4 years</p>
         </div>
         <div className="">
-            <img src={class2} alt="" />
+            {/* <img src={class2} alt="" /> */}
         </div>
     </div>
 </div>

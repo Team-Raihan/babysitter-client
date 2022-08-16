@@ -35,11 +35,9 @@ const SignUp = () => {
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   if (token) {
-    navigate(from, { replace: true });
+    navigate("/");
   }
-  if (user1 || user2) {
-    navigate(from, { replace: true });
-  }
+ 
 
   if (error || updateError || error1 || error2) {
     errorText = (

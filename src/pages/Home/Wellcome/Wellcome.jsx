@@ -8,7 +8,7 @@ export default function Wellcome() {
   return (
     <div className="container mx-auto relative z-40">
       <div>
-        <h2 className="  text-center text-5xl font-semibold text-nav-pink hover:text-pink-600    ">
+        <h2 className=" mt-10  text-center text-5xl font-semibold text-nav-pink hover:text-pink-600    ">
           Welcome to JOBBY
         </h2>
         <div className="h-full w-full flex justify-center  my-4 pt-2  ">

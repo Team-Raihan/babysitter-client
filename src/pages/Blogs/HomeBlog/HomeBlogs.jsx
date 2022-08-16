@@ -13,7 +13,7 @@ export default function HomeBlogs() {
     });
   }, []);
   return (
-    <div className="container mx-auto ">
+    <div >
       <div className="bg-[url('https://freebw.com/templates/jobby/images/bg-heading-04.jpg')] w-screen h-96 bg-cover bg-no-repeat relative mb-10">
         <div className="absolute  w-80 bg-white bottom-0 left-10 pl-10 pt-6 rounded-t-lg">
           <h2 className="text-nav-pink text-4xl mb-2 font-mono ">

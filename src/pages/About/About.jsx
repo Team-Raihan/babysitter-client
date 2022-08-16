@@ -23,7 +23,7 @@ export default function About() {
       </div>
       <div className="banner ">
         <div className="flex flex-row ml-12 ">
-          <img src={banner} className="max-w-sm rounded-lg shadow-2xl " />
+          <img src={banner} className="max-w-sm rounded-lg shadow-2xl " alt="/" />
           <div>
             <div className="ml-12 mt-12 px-12">
               <h1 className="text-nav-pink text-4xl mb-2 font-mono ">

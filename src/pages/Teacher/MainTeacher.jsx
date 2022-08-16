@@ -6,9 +6,8 @@ import Teacher from "./Teacher/Teacher";
 export default function MainTeacher() {
   return (
     <div>
-      <Header />
+
       <Teacher />
-      <Footer />
     </div>
   );
 }

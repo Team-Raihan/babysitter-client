@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
+  apiKey: "AIzaSyCRPCZ7tMOnHVMlH8RKke9QM7S_FcqXrUI",
+  authDomain: "babysitter-book.firebaseapp.com",
+  projectId: "babysitter-book",
+  storageBucket: "babysitter-book.appspot.com",
+  messagingSenderId: "658398848670",
+  appId: "1:658398848670:web:dc174a99e6f085ec1b7d8f"
 };
 
 // Initialize Firebase
