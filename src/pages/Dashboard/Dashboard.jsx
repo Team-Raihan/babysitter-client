@@ -105,7 +105,7 @@ const Dashboard = () => {
                       isActive ? " bg-primary" : undefined
                     }`
                   }
-                  to="/dashboard/add-feature-work"
+                  to="/dashboard/add-baby-sitter"
                 >
                   Add Baby Sitter
                 </NavLink>
@@ -117,7 +117,7 @@ const Dashboard = () => {
                       isActive ? " bg-primary" : undefined
                     }`
                   }
-                  to="/dashboard/manage-feature-works"
+                  to="/dashboard/manage-baby-sitter"
                 >
                   Manage Baby Sitter
                 </NavLink>

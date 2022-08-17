@@ -42,10 +42,9 @@ if(!babySitter.name|| !babySitter?.email){
 
         <div className="md:py-8 py-4 ">
           <p>
-            {/* {babySitter.description} */}
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus enim cum dignissimos accusantium quaerat dolorem impedit, esse, aliquam maxime sunt explicabo praesentium nihil ab in non ipsam. Deserunt, quibusdam qui sequi inventore illo quos id, aliquid dicta minima laboriosam maxime quod quisquam officia esse aperiam in odio nam laborum hic.
+            {babySitter?.description ? babySitter.description :"How do you make sure you have selected the right person to protect and guide your child while you are not present? How do even begin looking for such an important person to invite into your home and the life of your family? The answer: You begin with a highly detailed babysitter job description. Whether you’re writing an after-school babysitter job description or an infant job description, you need to be specific about your needs."}
+            </p>
 
-          </p>
         </div>
         <div className="divider before:bg-secondary after:bg-secondary">
           <label

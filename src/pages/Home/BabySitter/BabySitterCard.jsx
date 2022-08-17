@@ -13,7 +13,7 @@ const BabySitterCard = ({ feature }) => {
         <img
           src={feature?.pic}
           alt="feature"
-          className="rounded-none min-h-[260px] mx-auto"
+          className="rounded-none w-full h-[300px] 2xl:h-[380px] mx-auto"
         />
       </figure>
 

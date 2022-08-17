@@ -27,6 +27,8 @@ import Payment from "./components/Dashboard/payment/Payment";
 import BookedUserForBabySitter from "./components/Dashboard/BabySitterBooking/BookedUserForBabySitter";
 import Users from "./components/Dashboard/Users/Users";
 import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
+import AddBabySitter from "./components/Dashboard/AddBabySitter/AddBabySitter";
+import ManageBabySitter from "./components/ManageBabySitter/ManageBabySitter";
 
 function App() {
   AOS.init();
@@ -113,6 +115,22 @@ function App() {
             element={
               <RequireAuth>
                 <ManageBooking />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/dashboard/add-baby-sitter"
+            element={
+              <RequireAuth>
+                <AddBabySitter />
+              </RequireAuth>
+            }
+          />
+              <Route
+            path="/dashboard/manage-baby-sitter"
+            element={
+              <RequireAuth>
+                <ManageBabySitter />
               </RequireAuth>
             }
           />

@@ -37,6 +37,7 @@ import useToken from "../../../hooks/useToken";
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [pic, setPic] = useState();
+    const [price, setPrice] = useState("");
     const toast = useToast();
   
     const handleShowHide = () => {
@@ -145,7 +146,7 @@ import useToken from "../../../hooks/useToken";
     };
     const submitSignUpHandler = async () => {
       setPostLoading(true);
-      if (!name || !email || !password || !confirmPassword || !pic) {
+      if (!name || !email || !password || !confirmPassword || !pic ||!price) {
         toast({
           title: "Please Fill all the Fields",
           status: "warning",
@@ -240,6 +241,7 @@ import useToken from "../../../hooks/useToken";
               onChange={(e) => setEmail(e.target.value)}
             />
           </FormControl>
+        
           <FormControl id="password" isRequired>
             <FormLabel>Password</FormLabel>
             <InputGroup>
@@ -270,7 +272,14 @@ import useToken from "../../../hooks/useToken";
               </InputRightElement>
             </InputGroup>
           </FormControl>
-          <FormControl id="pic">
+          <FormControl id="price" isRequired>
+            <FormLabel>Booking Price</FormLabel>
+            <Input
+              placeholder="How much you expect?"
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </FormControl>
+          <FormControl id="pic" isRequired>
             <FormLabel>Upload Your Picture</FormLabel>
             <Input
               type="file"

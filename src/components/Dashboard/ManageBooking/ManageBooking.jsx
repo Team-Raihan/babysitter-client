@@ -12,7 +12,7 @@ const ManageBooking = () => {
     isLoading,
     refetch,
     error,
-  } = useQuery({ queryKey: ["manageMyBooking", 1], queryFn: getData });
+  } = useQuery({ queryKey: ["manageAllBookings", 1], queryFn: getData });
   if (isLoading) {
     return (
       <div className=" mt-10">
@@ -58,8 +58,7 @@ const ManageBooking = () => {
                     </tr>
                     <tr className="bg-gray-50 border-b border-gray-200 text-xs leading-4 text-gray-500 uppercase tracking-wider">
                       <th className="px-6 py-3 text-center font-medium">
-                        Your Image
-                      </th>
+                       Baby Sitter                     </th>
                       <th className="px-6 py-3 text-center font-medium">
                      Booked By
                       </th>
@@ -79,9 +78,9 @@ const ManageBooking = () => {
                   <tbody className="bg-white">
                     {myBooking?.data?.map((babysitter) => (
                       <tr key={babysitter?._id}>
-                        <td className="flex justify-center px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                          <div className="avatar">
-                            <div className="w-12 rounded-full ring-2 ring-secondary ring-offset-base-100 ring-offset-2">
+                        <td className="flex flex-col justify-center px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                          <div className="avatar justify-center items-center">
+                            <div className="w-12 flex  rounded-full ring-2 ring-secondary ring-offset-base-100 ring-offset-2">
                               <img
                                 className=" "
                                 src={babysitter?.productImg}
@@ -89,11 +88,13 @@ const ManageBooking = () => {
                               />
                             </div>
                           </div>
+                            <h1 className="text-center text-progresscolor">{babysitter?.buyerEmail}</h1>
                         </td>
                         <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           <div className="text-sm leading-5 text-gray-900">
                             <div className="flex flex-col items-center  justify-center">
-                              <div>{babysitter?.buyerEmail}</div>
+                              <h1 className="font-bold">{babysitter?.buyerName}</h1>
+                              <h1 className="text-progresscolor">{babysitter?.buyerEmail}</h1>
                             </div>
                           </div>
                         </td>
