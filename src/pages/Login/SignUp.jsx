@@ -25,7 +25,8 @@ const SignUp = () => {
   const [signInWithGithub, user2, loading2, error2] = useSignInWithGithub(auth);
   let errorText;
   let name, value;
-  const [token] = useToken(user || user1 || user2);
+  const role="parents"
+  const [token] = useToken(user,role || user1,role || user2,role);
   const getUserData = (e) => {
     name = e.target.name;
     value = e.target.value;
@@ -34,10 +35,14 @@ const SignUp = () => {
   };
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  // condition
+
   if (token) {
-    navigate("/");
+    return navigate("/");
   }
- 
+  if (user1 || user2) {
+    return navigate("/");
+  }
 
   if (error || updateError || error1 || error2) {
     errorText = (

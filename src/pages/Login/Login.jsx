@@ -22,8 +22,8 @@ const Login = () => {
   });
   const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
   const [signInWithGithub, user2, loading2, error2] = useSignInWithGithub(auth);
-
-  const [token] = useToken(user || user1 || user2);
+  const role = "parents";
+  const [token] = useToken(user, role || user1, role || user2, role);
   let errorText;
   let name, value;
   const getUserData = (e) => {
@@ -36,9 +36,11 @@ const Login = () => {
   // condition
 
   if (token) {
-    navigate("/");
+    return navigate("/");
   }
-
+  if (user1 || user2) {
+    return navigate("/");
+  }
 
   if (error || error1 || error2) {
     errorText = (

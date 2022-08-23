@@ -20,12 +20,12 @@ import useToken from "../../../hooks/useToken";
       useSignInWithEmailAndPassword(auth);
     const [loading, setLoading] = useState(false);
     const [passShow, setPassShow] = useState(false);
-  
+  const role="admin"
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const toast = useToast();
     const navigate = useNavigate();
-    const [token] = useToken(user);
+    const [token] = useToken(user,role);
     if(token){
       return navigate("/");
     }

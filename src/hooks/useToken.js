@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-const useToken = (user) => {
+const useToken = (user,role) => {
   const [token, setToken] = useState("");
   useEffect(() => {
     const email = user?.user?.email;
-    const currentUser = { email: email, role:"parents" };
+    const currentUser = { email: email, role:role };
     if (email) {
       fetch(`http://localhost:5000/api/user`, {
         method: "PUT",

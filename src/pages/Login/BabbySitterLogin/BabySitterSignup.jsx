@@ -24,7 +24,8 @@ import useToken from "../../../hooks/useToken";
       useCreateUserWithEmailAndPassword(auth, {
         sendEmailVerification: true,
       });
-      const [token] = useToken(user);
+      const role="babysitter"
+      const [token] = useToken(user,role);
       if(token){
         navigate("/")
       }
