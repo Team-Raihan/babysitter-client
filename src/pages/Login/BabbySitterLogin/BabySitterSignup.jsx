@@ -182,8 +182,7 @@ import useToken from "../../../hooks/useToken";
       } 
       else {
         try {
-          await createUserWithEmailAndPassword(email, password);
-          await updateProfile({ displayName: name, photoURL: pic });
+        
           const config = {
             headers: {
               "Content-type": "application/json",
@@ -191,7 +190,7 @@ import useToken from "../../../hooks/useToken";
           };
           const { data } = await axios.post(
             "http://localhost:5000/api/baby-sitter",
-            { name, email, password, pic },
+            { name, email, password, pic,price },
             config
           );
   
@@ -204,6 +203,8 @@ import useToken from "../../../hooks/useToken";
             isClosable: true,
             position: "bottom",
           });
+          await createUserWithEmailAndPassword(email, password);
+          await updateProfile({ displayName: name, photoURL: pic });
           setPostLoading(false);
           // return navigate("/");
         } catch (error) {
