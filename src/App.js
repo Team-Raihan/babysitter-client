@@ -31,6 +31,7 @@ import AddBabySitter from "./components/Dashboard/AddBabySitter/AddBabySitter";
 import ManageBabySitter from "./components/ManageBabySitter/ManageBabySitter";
 import AddReview from "./components/Dashboard/AddReview/AddReview";
 import Report from "./components/Dashboard/Report/Report";
+import AdminLogin from "./pages/Login/AdminLogin/AdminLogin";
 
 function App() {
   AOS.init();
@@ -53,6 +54,10 @@ function App() {
         <Route
           path="/login/babysitter"
           element={<BabySitterAuthentication />}
+        />
+        <Route
+          path="/login/admin"
+          element={<AdminLogin />}
         />
         <Route path="/contact" element={<Contact />} />
         <Route path="/baby-sitter/:id" element={<BabySitterDetails />} />
