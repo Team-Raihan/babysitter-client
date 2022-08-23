@@ -1,4 +1,5 @@
 import React from "react";
+import Reviews from "../../../components/Reviews/Reviews";
 import Activites from "../Activities/Activites";
 import BabySitter from "../BabySitter/BabySitter";
 import ClassRoom from "../ClassRoom/ClassRoom";
@@ -13,6 +14,7 @@ export default function Home() {
       <ClassRoom />
       <BabySitter/>
       <Activites />
+      <Reviews/>
       <OurBlog />
      
     </div>

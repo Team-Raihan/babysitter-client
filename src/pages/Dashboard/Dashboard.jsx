@@ -80,6 +80,18 @@ const Dashboard = () => {
                   My Booking
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/dashboard/add-review"
+                  className={({ isActive }) =>
+                    `p-2  text-white rounded hover:bg-gray-200 hover:text-gray-500 ${
+                      isActive ? " bg-primary" : undefined
+                    }`
+                  }
+                >
+                 Add Review
+                </NavLink>
+              </li>
             </>
          )} 
 
@@ -134,7 +146,18 @@ const Dashboard = () => {
                   Manage Booking
                 </NavLink>
               </li>
-        
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                  `p-2  text-white rounded hover:bg-gray-200 hover:text-gray-500 ${
+                    isActive ? " bg-primary" : undefined
+                  }`
+                }
+                to="/dashboard/report"
+              >
+                  Report
+                </NavLink>
+              </li>
             </>
           )}
            <li>

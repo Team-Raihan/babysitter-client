@@ -25,7 +25,7 @@ export default function Wellcome() {
                 />
               </div>
               <div>
-                <h2 className="text-center text-2xl my-2  hover:text-nav-pink font-bold ">
+                <h2 className="text-center text-2xl my-2  hover:text-pink-400  font-bold ">
                   Healthy Meals
                 </h2>
                 <p className="text-center">
@@ -46,7 +46,7 @@ export default function Wellcome() {
                 />
               </div>
               <div>
-                <h2 className="text-center text-2xl my-2    font-bold hover:text-nav-pink">
+                <h2 className="text-center text-2xl my-2  font-bold hover:text-pink-400 ">
                   Healthy Meals
                 </h2>
                 <p className="text-center">

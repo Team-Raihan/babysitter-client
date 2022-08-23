@@ -29,6 +29,8 @@ import Users from "./components/Dashboard/Users/Users";
 import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
 import AddBabySitter from "./components/Dashboard/AddBabySitter/AddBabySitter";
 import ManageBabySitter from "./components/ManageBabySitter/ManageBabySitter";
+import AddReview from "./components/Dashboard/AddReview/AddReview";
+import Report from "./components/Dashboard/Report/Report";
 
 function App() {
   AOS.init();
@@ -110,6 +112,14 @@ function App() {
               </RequireAuth>
             }
           />
+               <Route
+          path="add-review"
+          element={
+            <RequireAuth>
+              <AddReview />
+            </RequireAuth>
+          }
+        />
           <Route
             path="/dashboard/manage-booking"
             element={
@@ -134,6 +144,14 @@ function App() {
               </RequireAuth>
             }
           />
+           <Route
+          path="/dashboard/report"
+          element={
+            <RequireAuth>
+              <Report />
+            </RequireAuth>
+          }
+        />
         </Route>
       </Routes>
       <ToastContainer />
